@@ -1,0 +1,33 @@
+<a [routerLink]="'/'" class="btn btn-primary mt-2">Regresar</a>
+<hr>
+
+<table *ngIf="product" class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Nombre</td>
+        <td>{{product.title}}</td>
+      </tr>
+      <tr>
+        <td>Precio</td>
+        <td>{{product.regular_usd | currency}}</td>
+      </tr>
+      <tr>
+        <td>Marca</td>
+        <td>{{product.brand.name}}</td>
+      </tr>
+      <tr>
+        <td>Categoria</td>
+        <td>{{product.category}}</td>
+      </tr>
+      <tr>
+        <td>Tienda</td>
+        <td>{{product.store}}</td>
+      </tr>
+    </tbody>
+  </table>

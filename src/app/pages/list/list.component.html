@@ -1,0 +1,23 @@
+<h2 class="mt-2 mb-2">Lista de Productos</h2>
+
+<div class="row mb-3">
+    <div class="card m-3" style="width: 18rem;" *ngFor="let product of products">
+        <img class="card-img-top" src="{{product.image.image}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{product.title}}</h5>
+            <p class="card-text">{{product.regular_usd | currency}}</p>
+            <a [routerLink]="['detail', product._id]" class="btn btn-primary">Ver Producto</a>
+        </div>
+    </div>
+</div>
+
+<mat-paginator 
+    *ngIf="products.length"
+    [length]="totalItems"
+    [pageSize]="20"
+    [pageSizeOptions]="[20]"
+    aria-label="Seleccionar pagina"
+    (page)="handlePageEvent($event)"
+    >
+</mat-paginator>
+
